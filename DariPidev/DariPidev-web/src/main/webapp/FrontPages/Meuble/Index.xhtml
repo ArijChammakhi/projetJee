@@ -1,0 +1,48 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/Template/Layout.xhtml">
+<ui:define name="page"> Annonces </ui:define>
+	<ui:define name="content">
+	
+	<h3>Meubles</h3>
+							
+		
+				<h:form id="form">
+				<h:panelGroup>
+				<ui:repeat var="o" value="#{meubleBean.getAll()}">
+				
+				
+				
+				<div class="col-sm-6 col-md-3">
+                        <div class="thumbnail text-center">
+				<h5 class="text-primary">Voici les coordoneés du meuble</h5>				
+				 <ul>
+
+                                <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Son nom est :#{o.titre}</li>
+                                <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Date  :#{o.datePublication}</li>
+                                <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> prix  :#{o.prixM}</li>
+                                <li><i class="livicon" data-name="check" data-size="18" data-loop="true" data-c="#787878" data-hc="787878"></i> Addresse:#{o.adresse}</li>
+
+                  </ul>
+			   <h:form> 
+                                      	                                	  <h:commandButton action="#{meubleBean.deleteMeuble(o.idMeuble)}" style=" margin-left: 30px" class="btn btn-danger" value="Delete"></h:commandButton>
+</h:form>
+				   </div>
+                    </div>
+				</ui:repeat>
+				</h:panelGroup>
+	
+</h:form>
+			
+		
+			
+		
+	
+	</ui:define>
+    	
+
+	</ui:composition>	

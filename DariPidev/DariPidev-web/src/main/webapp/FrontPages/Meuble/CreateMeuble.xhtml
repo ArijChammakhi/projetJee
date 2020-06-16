@@ -1,0 +1,44 @@
+﻿<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	template="/Template/Layout.xhtml">
+<ui:define name="page"> Meubles </ui:define>
+	<ui:define name="content">
+                       
+                                    <h:form>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Titre</label>
+                                            <h:inputText styleClass="form-control" value="#{meubleBean.titre}"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">adresse</label>
+                                            <h:inputText styleClass="form-control" value="#{meubleBean.adresse}"/>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Prix</label>
+                                       <h:inputText styleClass="form-control" value="#{meubleBean.prixM}"/>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">description</label>
+                                              <h:inputText styleClass="form-control" value="#{meubleBean.description}"/>
+                                        
+                                        </div>
+                                        
+                                        
+                                          
+                                       <h:commandButton action="#{meubleBean.addMeuble()}" value="ajouter" styleClass="btn btn-success" >
+                                       </h:commandButton>
+                                    </h:form>
+                               
+                         
+
+	    
+</ui:define>
+    	
+
+	</ui:composition>	
